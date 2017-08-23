@@ -40,7 +40,6 @@ export class TallyComponent implements OnInit {
       }
       currentChars = currentChars.reverse();
       for (let i = 0; i < currentChars.length; i++) {
-        console.log(currentChars[i]);
         this.tallyCharacters[i] = currentChars[i];
       }
     }
