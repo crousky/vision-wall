@@ -1,13 +1,15 @@
 <div class="wall">
-  <div class="board glass">
+  <div class="board">
       <div class="wall-label">New Customers</div>
-      <div class="counter">{{customersImpacted.total}}</div>
+      <app-tally [defaultValue]="20000000" [currentValue]="15003"></app-tally>
+      <div class="clear"></div>
       <div class="wall-label">People Impacted</div>
-      <div class="counter">{{valueCreated.total}}</div>
+      <app-tally [prefixSymbol]="'$'" [defaultValue]="20000000" [currentValue]="120000"></app-tally>
+      <div class="clear"></div>      
       <div class="wall-label">Value Created</div>    
   </div>
   <div class="clear"></div>
-  <div class="board glass">
+  <div class="vision-statement">
     <div class="statements">
       <div class="top first">We can prove that enriched</div>
       <div class="middle first">human experiences produce stronger</div>

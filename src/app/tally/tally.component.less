@@ -1,0 +1,28 @@
+@text-light-blue: #285780;
+
+.tally{
+    color: rgba(255, 255, 255, 0.3);
+    width: 580px;
+    margin: 0 auto;
+
+    .tally-value {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .tally-character {
+        float: right;
+        width: 1em;
+        &.separator {
+            width: 0.3em;
+            padding-right: 0.4em;
+        }
+        &.tag {
+            color: @text-light-blue;
+        }
+    }
+}
+
+.clear {
+    clear: both;
+}
