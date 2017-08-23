@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'SingleStone 2020 Vision';
+  valueCreated: ValueCreated = {
+    total: 120000
+  };
+  customersImpacted: CustomersImpacted = {
+    total: 15003
+  };
+}
+
+export class ValueCreated {
+  total: number;
+}
+
+export class CustomersImpacted {
+  total: number;
 }
