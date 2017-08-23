@@ -3,15 +3,6 @@
 @text-light-blue: #285780;
 @text-dark-blue: #4E4E4E;
 
-.clear {
-    clear: both;
-}
-
-.glass {
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-}
-
 .wall {
     background-image: url(/assets/background.png);
     background-size: cover;
@@ -27,6 +18,19 @@
         margin: 1em auto;
         padding: 2em;
     }
+}
+
+.wall-label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: @label-color;
+    padding-bottom: 2em;
+    padding-top: 0.5em;
+}
+
+.clients-container {
+    margin-left: 80px;
 }
 
 .vision-statement {
@@ -57,21 +61,4 @@
     .bottom {
         text-align: right;
     }
-}
-
-.wall-label {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    color: @label-color;
-    padding-bottom: 2em;
-    padding-top: 0.5em;
-}
-
-.counter {
-    width: 800px;
-    margin: 0 auto;
-    text-align: right;
-    font-size: 4em;
-    color: @label-color;
 }

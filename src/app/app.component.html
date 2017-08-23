@@ -1,12 +1,15 @@
 <div class="wall">
   <div class="board">
-      <div class="wall-label">New Customers</div>
-      <app-tally [defaultValue]="20000000" [currentValue]="15003"></app-tally>
-      <div class="clear"></div>
-      <div class="wall-label">People Impacted</div>
-      <app-tally [prefixSymbol]="'$'" [defaultValue]="20000000" [currentValue]="120000"></app-tally>
-      <div class="clear"></div>      
-      <div class="wall-label">Value Created</div>    
+    <div class="clients-container">
+      <app-clients></app-clients>
+    </div>
+    <div class="wall-label">New Customers</div>
+    <app-tally [defaultValue]="20000000" [currentValue]="15003"></app-tally>
+    <div class="clear"></div>
+    <div class="wall-label">People Impacted</div>
+    <app-tally [prefixSymbol]="'$'" [defaultValue]="20000000" [currentValue]="120000"></app-tally>
+    <div class="clear"></div>      
+    <div class="wall-label">Value Created</div>    
   </div>
   <div class="clear"></div>
   <div class="vision-statement">
