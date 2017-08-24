@@ -1,18 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ImpactService } from './services/impact.service';
+import { ValueService } from './services/value.service';
+import { ClientService } from './services/client.service';
+import { Client } from './models/client';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  providers: [ImpactService, ValueService, ClientService]
 })
-export class AppComponent {
-  title = 'SingleStone 2020 Vision';
-  valueCreated: ValueCreated = {
-    total: 120000
-  };
-  customersImpacted: CustomersImpacted = {
-    total: 15003
-  };
+export class AppComponent implements OnInit {
+  peopleImpacted: number;
+  valueCreated: number;
+  clients: Client[];
+
+  constructor(
+    private impactService: ImpactService,
+    private valueService: ValueService,
+    private clientService: ClientService
+  ) { }
+
+  ngOnInit(): void {
+    this.getPeopleImpacted();
+    this.getValueCreated();
+    this.getClients();
+  }
+
+  getPeopleImpacted(): void {
+    this.peopleImpacted = this.impactService.getPeopleImpacted();
+  }
+  getValueCreated(): void {
+    this.valueCreated = this.valueService.getValueCreated();
+  }
+  getClients(): void {
+    this.clients = this.clientService.getClients();
+  }
 }
 
 export class ValueCreated {
