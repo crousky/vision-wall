@@ -11,6 +11,7 @@ import { Client } from './models/client';
   providers: [ImpactService, ValueService, ClientService]
 })
 export class AppComponent implements OnInit {
+  goalTarget: number;
   peopleImpacted: number;
   valueCreated: number;
   clients: Client[];
@@ -19,7 +20,9 @@ export class AppComponent implements OnInit {
     private impactService: ImpactService,
     private valueService: ValueService,
     private clientService: ClientService
-  ) { }
+  ) {
+    this.goalTarget = 20000000;
+  }
 
   ngOnInit(): void {
     this.getPeopleImpacted();
