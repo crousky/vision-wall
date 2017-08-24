@@ -1,7 +1,7 @@
 <div class="wall">
   <div class="board">
     <div class="clients-container">
-      <app-clients></app-clients>
+      <app-clients [totalSlots]="20"></app-clients>
     </div>
     <div class="wall-label">New Customers</div>
     <app-tally [defaultValue]="20000000" [currentValue]="15003"></app-tally>
