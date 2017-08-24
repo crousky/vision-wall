@@ -48,7 +48,7 @@ export class ClientsComponent implements OnInit, OnChanges {
         if (i % 2 === 0) {
           this.bottomRow[(i / 2)] = clientTag;
         } else {
-          this.topRow[((i + 1) / 2) - 1] = clientTag;
+          this.topRow[((i - 1) / 2)] = clientTag;
         }
       }
     }

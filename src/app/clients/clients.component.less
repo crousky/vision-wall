@@ -2,15 +2,15 @@
 
 .clients {
     color: rgba(255, 255, 255, 0.3);
-    .client-placeholder, .placeholder {
+    .placeholder {
         display: inline-block;
         height: 80px;
         width: 80px;
         text-align: center;
         vertical-align: middle;
-        margin-left: 25px;
+        margin-left: 30px;
     }
-    .client-tag, .flip-tag {
+    .flip-tag {
         padding: 7px;
         display: inline-block;
         margin-left: 10px;
@@ -18,17 +18,36 @@
             display: inline-block;
             width: 66px;
             height: 66px;
+            &:hover {
+                background-color: #fff;
+                background-image: url();
+                color: #000;
+                .client-icon {
+                    display: none;
+                }
+                .client-detail {
+                   display: block;
+                }
+            }
+            .client-icon {
+                fill: @text-light-blue;
+                float: left;
+                margin: 15px 15px;
+                height: 33px;
+                width: 33px;
+            }
+            .client-detail {
+                float: left;
+                display: none;
+                font-size: 0.6em;
+                text-align: center;
+                margin: 25px 0;
+                width: 66px;
+                color: @text-light-blue;
+            }
         }
     }
     .bottom-row {
         margin-left: 55px;
     }
-}
-
-.client-icon {
-    fill: @text-light-blue;
-    float: left;
-    margin: 15px 15px;
-    height: 33px;
-    width: 33px;
 }
