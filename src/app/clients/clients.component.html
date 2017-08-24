@@ -1,0 +1,24 @@
+<div class="clients">
+  <div class="client-row">
+      <span *ngFor="let cs of topRow.reverse()" [ngClass]="cs.type">
+        <span *ngIf="cs.type === 'placeholder'">{{cs.name}}</span>
+        <span *ngIf="cs.type === 'flip-tag'">
+          <a class="tag" [href]="cs.clientUrl" target="_blank">
+            <div class="client-icon" [innerHTML]="cs.tagImage"></div>
+            <div class="client-detail">{{cs.name}}</div>
+          </a>
+        </span>
+      </span>
+  </div>
+  <div class="client-row bottom-row">
+    <span *ngFor="let cs of bottomRow.reverse()" [ngClass]="cs.type">
+      <span *ngIf="cs.type === 'placeholder'">{{cs.name}}</span>
+      <span *ngIf="cs.type === 'flip-tag'">
+          <a class="tag" [href]="cs.clientUrl" target="_blank">
+            <div class="client-icon" [innerHTML]="cs.tagImage"></div>
+            <div class="client-detail">{{cs.name}}</div>
+          </a>
+        </span>
+    </span>
+  </div>
+</div>
