@@ -1,23 +1,23 @@
-@text-light-blue: #285780;
+@import "../../variables";
 
 .clients {
     color: rgba(255, 255, 255, 0.3);
     .placeholder {
         display: inline-block;
-        height: 80px;
-        width: 80px;
+        height: @tag-size;
+        width: @tag-size;
         text-align: center;
         vertical-align: middle;
-        margin-left: 30px;
+        margin-left: 1.5em;
     }
     .flip-tag {
-        padding: 7px;
+        padding: 0.3em;
         display: inline-block;
-        margin-left: 10px;
+        margin-left: 0.5em;
         .tag {
             display: inline-block;
-            width: 66px;
-            height: 66px;
+            width: @tag-size;
+            height: @tag-size;
             &:hover {
                 background-color: #fff;
                 background-image: url();
@@ -32,22 +32,22 @@
             .client-icon {
                 fill: @text-light-blue;
                 float: left;
-                margin: 15px 15px;
-                height: 33px;
-                width: 33px;
+                margin: 0.75em 0.75em;
+                height: @tag-radius;
+                width: @tag-radius;
             }
             .client-detail {
                 float: left;
                 display: none;
                 font-size: 0.6em;
                 text-align: center;
-                margin: 25px 0;
-                width: 66px;
+                margin: 2.2em 0;
+                width: @tag-radius;
                 color: @text-light-blue;
             }
         }
     }
     .bottom-row {
-        margin-left: 55px;
+        margin-left: 2.5em;
     }
 }

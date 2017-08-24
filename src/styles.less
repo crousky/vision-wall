@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "font.less";
+@import "variables";
 
 body {
     margin: 0px;
@@ -14,12 +15,12 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#708aa4', endColorstr='#efad5d', GradientType=0 );
 }
 
-.tag {
-    background-image: url(/assets/tag.png);
-    border-radius: 33px;
-    box-shadow: 0 0 0.2em #575E61;
-}
-
 .clear {
     clear: both;
+}
+
+.tag {
+    background-image: url(/assets/tag.png);
+    border-radius: @tag-radius;
+    box-shadow: 0 0 0.2em #575E61;
 }

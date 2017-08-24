@@ -1,4 +1,4 @@
-@text-light-blue: #285780;
+@import "../../variables";
 
 .tally{
     color: rgba(255, 255, 255, 0.3);
@@ -7,13 +7,13 @@
 
     .tally-value {
         text-align: center;
-        font-size: 3em;
     }
 
     .tally-character {
+        font-size: 3em;
         float: right;
-        height: 66px;
-        width: 66px;
+        height: @tag-size;
+        width: @tag-size;
         margin-left: 0.1em;
         &.separator {
             width: 0.3em;
