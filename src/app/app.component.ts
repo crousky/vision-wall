@@ -31,13 +31,13 @@ export class AppComponent implements OnInit {
   }
 
   getPeopleImpacted(): void {
-    this.peopleImpacted = this.impactService.getPeopleImpacted();
+    this.impactService.getPeopleImpacted().subscribe(n => this.peopleImpacted = n);
   }
   getValueCreated(): void {
-    this.valueCreated = this.valueService.getValueCreated();
+    this.valueService.getValueCreated().subscribe(n => this.valueCreated = n);
   }
   getClients(): void {
-    this.clients = this.clientService.getClients();
+    this.clientService.getClients().subscribe(c => this.clients = c);
   }
 }
 
