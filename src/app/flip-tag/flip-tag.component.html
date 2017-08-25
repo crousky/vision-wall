@@ -1,0 +1,7 @@
+<span *ngIf="isPlaceholder" class="placeholder">{{text}}</span>
+<span *ngIf="!isPlaceholder" class="flip-tag">
+  <a class="tag" [href]="link" target="_blank">
+    <div class="client-icon" [innerHTML]="tagImage"></div>
+    <div class="client-detail">{{text}}</div>
+  </a>
+</span>

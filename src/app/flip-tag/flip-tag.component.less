@@ -1,0 +1,47 @@
+@import "../../variables";
+
+.placeholder {
+    display: inline-block;
+    height: @tag-size;
+    width: @tag-size;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 1.5em;
+}
+.flip-tag {
+    padding: 0.3em;
+    display: inline-block;
+    margin-left: 0.5em;
+    .tag {
+        display: inline-block;
+        width: @tag-size;
+        height: @tag-size;
+        &:hover {
+            background-color: #fff;
+            background-image: url();
+            color: #000;
+            .client-icon {
+                display: none;
+            }
+            .client-detail {
+               display: block;
+            }
+        }
+        .client-icon {
+            fill: @text-light-blue;
+            float: left;
+            margin: 0.75em 0.75em;
+            height: @tag-radius;
+            width: @tag-radius;
+        }
+        .client-detail {
+            float: left;
+            display: none;
+            font-size: 0.6em;
+            text-align: center;
+            margin: 2.2em 0;
+            width: @tag-radius;
+            color: @text-light-blue;
+        }
+    }
+}

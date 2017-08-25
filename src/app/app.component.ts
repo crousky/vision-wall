@@ -40,11 +40,3 @@ export class AppComponent implements OnInit {
     this.clientService.getClients().subscribe(c => this.clients = c);
   }
 }
-
-export class ValueCreated {
-  total: number;
-}
-
-export class CustomersImpacted {
-  total: number;
-}
