@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { TallyCharacter } from './tally';
 
 @Component({
@@ -6,8 +6,7 @@ import { TallyCharacter } from './tally';
   templateUrl: './tally.component.html',
   styleUrls: ['./tally.component.less']
 })
-export class TallyComponent implements OnInit {
-
+export class TallyComponent implements OnInit, OnChanges {
   @Input() prefixSymbol: string;
   @Input() defaultValue: number;
   @Input() currentValue: number;
@@ -17,6 +16,12 @@ export class TallyComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.reloadTally();
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.reloadTally();
+  }
+  reloadTally(): void {
     this.tallyCharacters = [];
     const valChars: string[] = this.defaultValue.toLocaleString().split('');
     for (let i = 0; i < valChars.length; i++) {
@@ -52,5 +57,4 @@ export class TallyComponent implements OnInit {
       this.tallyCharacters.push(tc);
     }
   }
-
 }

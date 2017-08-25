@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 @Injectable()
 export class ImpactService {
-    private impactSubject: ReplaySubject<number> = new ReplaySubject(1);
+    public impactSubject: ReplaySubject<number> = new ReplaySubject(1);
+
+    constructor(private http: Http) { }
 
     public getPeopleImpacted(): ReplaySubject<number> {
-        this.impactSubject.next(15003);
+        this.http.get('http://localhost:7071/api/impact')
+        .subscribe(res => {
+            this.impactSubject.next(parseInt(res.text(), 10));
+            console.log('impact service returned', parseInt(res.text(), 10));
+        });
         return this.impactSubject;
     }
 }
