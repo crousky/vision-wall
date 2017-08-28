@@ -16,21 +16,22 @@
         display: inline-block;
         width: @tag-size;
         height: @tag-size;
-        &:hover {
-            background-color: #fff;
-            background-image: url();
-            color: #000;
-            .client-icon {
-                display: none;
-            }
-            .client-detail {
-               display: block;
-            }
-        }
+        // &:hover {
+        //     background-color: #fff;
+        //     background-image: url();
+        //     color: #000;
+        //     .client-icon {
+        //         display: none;
+        //     }
+        //     .client-detail {
+        //        display: block;
+        //     }
+        // }
         .client-icon {
             fill: @text-light-blue;
             float: left;
-            margin: 0.75em 0.75em;
+            margin-top: @tag-radius / 3;
+            margin-left: @tag-radius / 2;
             height: @tag-radius;
             width: @tag-radius;
         }

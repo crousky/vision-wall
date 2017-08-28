@@ -21,12 +21,11 @@ export class ClientsComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.initRows();
-    this.loadClients();
   }
   ngOnChanges() {
     this.initRows();
-    this.loadClients();
   }
+
   initRows(): void {
     this.topRow = [];
     this.bottomRow = [];
@@ -38,7 +37,13 @@ export class ClientsComponent implements OnInit, OnChanges {
         this.bottomRow.push(new Placeholder(i.toString()));
       }
     }
+
+    this.loadClients();
+
+    this.topRow = this.topRow.reverse();
+    this.bottomRow = this.bottomRow.reverse();
   }
+
   loadClients(): void {
     if (this.clients) {
       for (let i = 0; i < this.clients.length; i++) {
