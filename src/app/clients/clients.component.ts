@@ -43,7 +43,7 @@ export class ClientsComponent implements OnInit, OnChanges {
     if (this.clients) {
       for (let i = 0; i < this.clients.length; i++) {
         const client = this.clients[i];
-        const safeImage = this.sanitizer.bypassSecurityTrustHtml(client.logoImage);
+        const safeImage = this.sanitizer.bypassSecurityTrustHtml(client.tagImage);
         const clientTag = new FlipTag(client.name, safeImage, client.url);
         if (i % 2 === 0) {
           this.bottomRow[(i / 2)] = clientTag;

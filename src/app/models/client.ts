@@ -1,7 +1,7 @@
 export class Client {
     id: number;
     name: string;
-    logoImage: string;
+    tagImage: string;
     url: string;
     month: number;
     year: number;

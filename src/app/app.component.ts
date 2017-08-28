@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
     this.valueService.getValueCreated();
   }
   getClients(): void {
-    this.clientService.getClients().subscribe(c => this.clients = c);
+    this.clientService.clientSubject.subscribe(c => this.clients = c);
+    this.clientService.getClients();
   }
 }
