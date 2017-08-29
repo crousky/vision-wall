@@ -1,5 +1,4 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ClientSlot } from './clientSlot';
 import { FlipTag } from './flipTag';
 import { Placeholder } from './placeholder';
@@ -16,8 +15,6 @@ export class ClientsComponent implements OnInit, OnChanges {
   @Input() clients: Client[];
   topRow: ClientSlot[];
   bottomRow: ClientSlot[];
-
-  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.initRows();
@@ -48,8 +45,8 @@ export class ClientsComponent implements OnInit, OnChanges {
     if (this.clients) {
       for (let i = 0; i < this.clients.length; i++) {
         const client = this.clients[i];
-        const safeImage = this.sanitizer.bypassSecurityTrustHtml(client.tagImage);
-        const clientTag = new FlipTag(client.name, safeImage, client.url);
+        const imageUrl = 'https://vizwalldev.azurewebsites.net/client-icons/' + client.id + '.png';
+        const clientTag = new FlipTag(client.id, client.name, imageUrl, client.url);
         if (i % 2 === 0) {
           this.bottomRow[(i / 2)] = clientTag;
         } else {

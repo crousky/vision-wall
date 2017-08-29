@@ -1,6 +1,7 @@
 <div class="clients">
   <div class="client-row">
     <app-flip-tag *ngFor="let cs of topRow"
+      [id]="cs.id"
       [isPlaceholder]="cs.type === 'placeholder'"
       [text]="cs.name"
       [link]="cs.clientUrl"
@@ -9,6 +10,7 @@
   </div>
   <div class="client-row bottom-row">
     <app-flip-tag *ngFor="let cs of bottomRow"
+      [id]="cs.id"
       [isPlaceholder]="cs.type === 'placeholder'"
       [text]="cs.name"
       [link]="cs.clientUrl"

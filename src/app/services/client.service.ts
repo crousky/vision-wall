@@ -14,6 +14,7 @@ export class ClientService {
         this.http.get(environment.apiPath + 'clients')
             .subscribe(res => {
                 if (res.ok) {
+                    console.dir(res.json());
                     this.clientSubject.next(res.json());
                 }
             });
