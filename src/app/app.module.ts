@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TallyComponent } from './tally/tally.component';
 import { ClientsComponent } from './clients/clients.component';
 import { FlipTagComponent } from './flip-tag/flip-tag.component';
+import { VisionStatementComponent } from './vision-statement/vision-statement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TallyComponent,
     ClientsComponent,
-    FlipTagComponent
+    FlipTagComponent,
+    VisionStatementComponent
   ],
   imports: [
     BrowserModule,

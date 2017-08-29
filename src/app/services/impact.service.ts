@@ -11,10 +11,10 @@ export class ImpactService {
 
     public getPeopleImpacted(): ReplaySubject<number> {
         this.http.get(environment.apiPath + 'impact')
-        .subscribe(res => {
-            this.impactSubject.next(parseInt(res.text(), 10));
-            console.log('impact service returned', parseInt(res.text(), 10));
-        });
+            .subscribe(res => {
+                this.impactSubject.next(parseInt(res.text(), 10));
+                console.log('impact service returned', parseInt(res.text(), 10));
+            });
         return this.impactSubject;
     }
 }

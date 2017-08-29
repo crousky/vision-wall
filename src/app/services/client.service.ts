@@ -13,7 +13,9 @@ export class ClientService {
     public getClients(): ReplaySubject<Client[]> {
         this.http.get(environment.apiPath + 'clients')
             .subscribe(res => {
-                this.clientSubject.next(res.json());
+                if (res.ok) {
+                    this.clientSubject.next(res.json());
+                }
             });
         return this.clientSubject;
     }
