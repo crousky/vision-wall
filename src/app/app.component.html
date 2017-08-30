@@ -1,17 +1,1 @@
-<div class="wall">
-  <div class="board">
-    <div class="clients-container">
-      <app-clients [totalSlots]="20" [clients]="clients"></app-clients>
-    </div>
-    <div class="wall-label">New Customers</div>
-    <app-tally [defaultValue]="goalTarget" [currentValue]="peopleImpacted"></app-tally>
-    <div class="clear"></div>
-    <div class="wall-label">People Impacted</div>
-    <app-tally [prefixSymbol]="'$'" [defaultValue]="goalTarget" [currentValue]="valueCreated"></app-tally>
-    <div class="clear"></div>      
-    <div class="wall-label">Value Created</div>    
-  </div>
-  <div class="clear"></div>
-  <app-vision-statement></app-vision-statement>
-</div>
-<div class="clear"></div>
+<router-outlet></router-outlet>

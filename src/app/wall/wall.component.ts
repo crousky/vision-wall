@@ -1,0 +1,53 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ImpactService } from '../services/impact.service';
+import { ValueService } from '../services/value.service';
+import { ClientService } from '../services/client.service';
+import { Client } from '../models/client';
+
+@Component({
+  selector: 'app-wall',
+  templateUrl: './wall.component.html',
+  styleUrls: ['./wall.component.less'],
+  providers: [ImpactService, ValueService, ClientService]
+})
+export class WallComponent implements OnInit {
+  goalTarget: number;
+  peopleImpacted: number;
+  valueCreated: number;
+  clients: Client[];
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private impactService: ImpactService,
+    private valueService: ValueService,
+    private clientService: ClientService
+  ) {
+    this.goalTarget = 20000000;
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(p => {
+      const token = p['token'];
+      this.router.navigate(['./']);
+    });
+    this.getPeopleImpacted();
+    this.getValueCreated();
+    this.getClients();
+  }
+
+  getPeopleImpacted(): void {
+    this.impactService.impactSubject.subscribe(n => this.peopleImpacted = n);
+    this.impactService.getPeopleImpacted();
+  }
+  getValueCreated(): void {
+    this.valueService.valueSubject.subscribe(n => this.valueCreated = n);
+    this.valueService.getValueCreated();
+  }
+  getClients(): void {
+    this.clientService.clientSubject.subscribe(c => this.clients = c);
+    this.clientService.getClients();
+  }
+
+}
