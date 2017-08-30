@@ -3,14 +3,19 @@ import { Http, Response } from '@angular/http';
 import { Client } from '../models/client';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { environment } from '../../environments/environment';
+import { TokenService } from './token.service';
 
 @Injectable()
 export class ClientService {
     public clientSubject: ReplaySubject<Client[]> = new ReplaySubject();
 
-    constructor(private http: Http) { }
+    constructor(
+        private http: Http,
+        private tokenService: TokenService
+    ) {}
 
     public getClients(): ReplaySubject<Client[]> {
+        console.log('token ' + this.tokenService.getToken());
         this.http.get(environment.apiPath + 'clients')
             .subscribe(res => {
                 if (res.ok) {

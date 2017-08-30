@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ImpactService } from '../services/impact.service';
 import { ValueService } from '../services/value.service';
 import { ClientService } from '../services/client.service';
@@ -18,8 +17,6 @@ export class WallComponent implements OnInit {
   clients: Client[];
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
     private impactService: ImpactService,
     private valueService: ValueService,
     private clientService: ClientService
@@ -28,10 +25,6 @@ export class WallComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(p => {
-      const token = p['token'];
-      this.router.navigate(['./']);
-    });
     this.getPeopleImpacted();
     this.getValueCreated();
     this.getClients();
