@@ -3,9 +3,20 @@
 .board {
     height: 600px;
     overflow: hidden;
-    &.glass:before {
+    position: relative;
+    box-shadow: 0 0 1em rgba(0,0,0,.2);
+    padding-top:  1em;
+    :before {
+        background-image: url(/assets/blurred-background.jpg);
+        background-size: 100vw;
         background-position-y: -@top-offset;
-        box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        content: ' ';
     }
 }
 
