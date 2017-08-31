@@ -1,18 +1,10 @@
 @import "../../variables";
 
-.wall {
-    background-image: url(/assets/background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;  
-    padding: 3em;
-    width: @max-width;
-    height: @max-height;
-    margin: 0 auto;
-    font-size: @base-font-size;
-    .board {
-        margin: 1em auto;
-        padding: 2em;
+.board {
+    height: 550px;
+    overflow: hidden;
+    &.glass:before {
+        background-position-y: -@top-offset;
     }
 }
 
@@ -24,10 +16,3 @@
     padding-bottom: 1.5em;
     padding-top: 0.25em;
 }
-
-.clients-container {
-    margin-left: 6em;
-    margin-top: 0.5em;
-}
-
-
