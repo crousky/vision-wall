@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Client } from '../models/client';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { environment } from '../../environments/environment';
@@ -15,8 +15,12 @@ export class ClientService {
     ) {}
 
     public getClients(): ReplaySubject<Client[]> {
-        console.log('token ' + this.tokenService.getToken());
-        this.http.get(environment.apiPath + 'clients')
+        const headers = new Headers();
+        const requestOptions = new RequestOptions({ headers: headers });
+
+        headers.append('Authorization', 'Bearer ' + this.tokenService.getToken());
+
+        this.http.get(environment.apiPath + 'clients', requestOptions)
             .subscribe(res => {
                 if (res.ok) {
                     console.dir(res.json());
