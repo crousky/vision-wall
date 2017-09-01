@@ -45,7 +45,7 @@ export class ClientsComponent implements OnInit, OnChanges {
     if (this.clients) {
       for (let i = 0; i < this.clients.length; i++) {
         const client = this.clients[i];
-        const imageUrl = 'https://vizwalldev.azurewebsites.net/client-icons/' + client.id + '.png';
+        const imageUrl = '/client-icons/' + client.id + '.png';
         const clientTag = new FlipTag(client.id, client.name, imageUrl, client.url);
         if (i % 2 === 0) {
           this.bottomRow[(i / 2)] = clientTag;
