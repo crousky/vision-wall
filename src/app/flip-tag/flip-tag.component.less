@@ -16,17 +16,18 @@
         display: inline-block;
         width: @tag-size;
         height: @tag-size;
-        // &:hover {
-        //     background-color: #fff;
-        //     background-image: url();
-        //     color: #000;
-        //     .client-icon {
-        //         display: none;
-        //     }
-        //     .client-detail {
-        //        display: block;
-        //     }
-        // }
+        border-radius: @tag-radius;
+        &:hover {
+            background-color: #fff;
+            background-image: url();
+            color: #000;
+            .client-image {
+                display: none;
+            }
+            .client-detail {
+               display: block;
+            }
+        }
         img {
             height: @tag-size;
             width: @tag-size;
@@ -36,9 +37,23 @@
             display: none;
             font-size: 0.6em;
             text-align: center;
-            margin: 2.2em 0;
-            width: @tag-radius;
+            margin: 0.5em 0;
+            width: @tag-size;
             color: @text-light-blue;
+            border-radius: @tag-radius;
+            .client-name {
+                width: 50px;
+                height: 45px;
+                overflow: hidden;
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+            }
+            svg {
+                width: 16px;
+                height: 16px;
+                fill: @text-light-blue;
+            }
         }
     }
 }
