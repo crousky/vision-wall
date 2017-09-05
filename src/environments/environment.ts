@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  apiPath: 'http://localhost:7071/api/'
+  apiPath: 'http://localhost:7071/api/',
+  clientImageBaseUrl: 'https://vizwalldev.azurewebsites.net/client-icons/'
 };

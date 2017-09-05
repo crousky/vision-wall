@@ -3,6 +3,7 @@ import { ClientSlot } from './clientSlot';
 import { FlipTag } from './flipTag';
 import { Placeholder } from './placeholder';
 import { Client } from '../models/client';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-clients',
@@ -45,7 +46,7 @@ export class ClientsComponent implements OnInit, OnChanges {
     if (this.clients) {
       for (let i = 0; i < this.clients.length; i++) {
         const client = this.clients[i];
-        const imageUrl = '/client-icons/' + client.id + '.png';
+        const imageUrl = environment.clientImageBaseUrl + client.id + '.png';
         const clientTag = new FlipTag(client.id, client.name, imageUrl, client.url);
         if (i % 2 === 0) {
           this.bottomRow[(i / 2)] = clientTag;

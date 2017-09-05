@@ -1,4 +1,5 @@
 export const environment = {
     production: false,
-    apiPath: '/api/'
+    apiPath: '/api/',
+    clientImageBaseUrl: '/client-icons/'
   };
