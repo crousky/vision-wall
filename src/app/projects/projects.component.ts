@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Project } from '../models/project';
 import { ProjectService } from '../services/project.service';
 import { environment } from '../../environments/environment';
@@ -15,7 +16,10 @@ export class ProjectsComponent implements OnInit {
   totalValue: number;
   projects: Project[];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(
+    private projectService: ProjectService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
     this.getProjects();
@@ -35,4 +39,7 @@ export class ProjectsComponent implements OnInit {
     this.projectService.getProjects();
   }
 
+  backClicked() {
+    this.location.back();
+  }
 }

@@ -17,3 +17,24 @@
     padding-top: 0.75em;
     letter-spacing: 0.06em;
 }
+
+.nav-arrow {
+    height: @tag-size;
+    width: @tag-size;
+    border-radius: @tag-radius;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    right: 120px;
+    top: 445px;
+    svg {
+        margin: 10px;
+        height: 55px;
+        fill: @label-color;
+    }
+    &:hover {
+        background-color: #fff;
+        svg {
+            fill: @text-light-blue;
+        }
+    }
+}
