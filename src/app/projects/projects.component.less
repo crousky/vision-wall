@@ -1,11 +1,34 @@
 @import "../../variables";
 
+.nav-arrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    svg {
+        margin: 10px;
+        height: 32px;
+        fill: @label-color;
+    }
+    &:hover {
+        background-color: #fff;
+        svg {
+            fill: @text-light-blue;
+        }
+    }
+}
+
 .projects-container {
     padding: 3em 5em;
     color: @label-color;
 
-    .section-header {
-        font-size: 2em;
+    .section-label {
+        font-size: 1.6em;
+        margin-bottom: 0.2em;
+    }
+    .section-details {
+        font-size: 1.2em;
+        letter-spacing: 0.06em;
     }
     .total {
         font-weight: bold;
@@ -38,25 +61,52 @@
             }
             .more {
                 float: right;
-                height: 50px;
-                width: 50px;
-                border-radius: 25px;
                 margin-right: 25px;
-                background-color: rgba(255, 255, 255, 0.2);
-                svg {
-                    margin: 10px;
-                    height: 32px;
-                    fill: @label-color;
-                }
             }
             &:hover {
                 background-color: rgba(255, 255, 255, 0.05);
-                .more {
+                .nav-arrow {
                     background-color: #fff;
                     svg {
                         fill: @text-light-blue;
                     }
                 }
+            }
+        }
+    }
+
+    .paging-buttons {
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 120px;
+        .nav-arrow {
+            float: left;
+            &:first-child {
+                margin-left: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+
+    .nav-buttons {
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 375px;
+        .nav-button {
+            &:first-child {
+                margin-left: 0;
+            }
+            margin-left: 20px;
+            height: 50px;
+            width: 175px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            background-color: @label-color;
+            color: @text-orange;
+            &.primary {
+                background-color: @text-light-blue;
+                color: @label-color; 
             }
         }
     }
