@@ -15,6 +15,9 @@ export class ProjectsComponent implements OnInit {
   totalPeople: number;
   totalValue: number;
   projects: Project[];
+  pagedProjects: Project[];
+  currentPage: number;
+  readonly numPerPage = 5;
 
   constructor(
     private projectService: ProjectService,
@@ -28,6 +31,7 @@ export class ProjectsComponent implements OnInit {
   getProjects(): void {
     this.projectService.projectSubject.subscribe(p => {
       this.projects = p;
+      this.currentPage = 0;
       this.totalProjects = this.projects.length;
       this.totalPeople = 0;
       this.totalValue = 0;
@@ -35,8 +39,27 @@ export class ProjectsComponent implements OnInit {
         this.totalPeople += x.peopleImpacted;
         this.totalValue += x.valueCreated;
       });
+      this.updatePagedList();
     });
     this.projectService.getProjects();
+  }
+
+  updatePagedList(): void {
+    this.pagedProjects = this.projects.slice(this.currentPage * this.numPerPage, (this.currentPage + 1) * this.numPerPage);
+  }
+
+  nextPageClicked() {
+    if ((this.projects.length / this.numPerPage) - 1 > this.currentPage) {
+      this.currentPage++;
+      this.updatePagedList();
+    }
+  }
+
+  prevPageClicked() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.updatePagedList();
+    }
   }
 
   backClicked() {
