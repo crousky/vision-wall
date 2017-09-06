@@ -1,0 +1,63 @@
+@import "../../variables";
+
+.projects-container {
+    padding: 3em 5em;
+    color: @label-color;
+
+    .section-header {
+        font-size: 2em;
+    }
+    .total {
+        font-weight: bold;
+    }
+
+    .project-list {
+        margin-top: 1em;
+        .project-item {
+            margin-top: 3px;
+            padding: 1em;
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 1.2em;
+            .project-detail {
+                float: left;
+            }
+            .completion {
+                width: 150px;
+                margin-top: 12px;
+            }
+            .description {
+                width: 500px;
+                .label {
+                    font-size: 0.8em;
+                }
+            }
+            .solution {
+                margin-top: 16px;
+                font-size: 0.8em;
+                font-family: "Museo Sans 700";
+            }
+            .more {
+                float: right;
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+                margin-right: 25px;
+                background-color: rgba(255, 255, 255, 0.2);
+                svg {
+                    margin: 10px;
+                    height: 32px;
+                    fill: @label-color;
+                }
+            }
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.05);
+                .more {
+                    background-color: #fff;
+                    svg {
+                        fill: @text-light-blue;
+                    }
+                }
+            }
+        }
+    }
+}

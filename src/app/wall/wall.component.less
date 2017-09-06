@@ -6,25 +6,6 @@
     position: relative;
     box-shadow: 0 0 1em rgba(0,0,0,.2);
     padding: 3em 0;
-    :before {
-        background-image: url(/assets/blurred-background.jpg);
-        background-size: 100vw;
-        background-position-y: -@top-offset;
-        background-position-x: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        content: ' ';
-    }
-    @media (max-width: 1200px) {
-        :before {
-            background-size: 1200px;
-        }
-    }
 }
 
 .wall-label {

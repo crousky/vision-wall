@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "font.css";
 @import "variables";
 @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre');
 
@@ -9,8 +8,8 @@ body {
     background-image: url(/assets/background.png);
     background-size: cover;
     background-repeat: no-repeat;
-    // font-family: "Chronicle SSm A", "Chronicle SSm B", serif;
     font-family: 'Frank Ruhl Libre', serif;
+    cursor: url('https://2020visionwalldev.azurewebsites.net/client-icons/2333c43b-948f-4732-96cb-05aa5a80abc3.ico'), default;
 }
 
 @font-face {
@@ -32,7 +31,6 @@ body {
     margin: 0 auto;
     font-size: @base-font-size;
     position: relative;
-    //top: @top-offset;
 }
 
 .tag {
@@ -44,6 +42,25 @@ body {
 .glass {
     z-index: 1;
     overflow: hidden;
+    :before {
+        background-image: url(/assets/blurred-background.jpg);
+        background-size: 100vw;
+        background-position-y: -@top-offset;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        content: ' ';
+    }
+    @media (max-width: 1200px) {
+        :before {
+            background-size: 1200px;
+        }
+    }
 }
 
 .circle {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+54 */

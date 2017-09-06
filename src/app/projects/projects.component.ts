@@ -10,6 +10,8 @@ import { environment } from '../../environments/environment';
   providers: [ProjectService]
 })
 export class ProjectsComponent implements OnInit {
+  totalPeople: number;
+  totalValue: number;
   projects: Project[];
 
   constructor(private projectService: ProjectService) { }
@@ -19,7 +21,15 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projectService.projectSubject.subscribe(p => this.projects = p);
+    this.projectService.projectSubject.subscribe(p => {
+      this.projects = p;
+      this.totalPeople = 0;
+      this.totalValue = 0;
+      this.projects.forEach(x => {
+        this.totalPeople += x.peopleImpacted;
+        this.totalValue += x.valueCreated;
+      });
+    });
     this.projectService.getProjects();
   }
 
