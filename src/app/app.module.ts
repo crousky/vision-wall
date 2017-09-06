@@ -10,6 +10,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { FlipTagComponent } from './flip-tag/flip-tag.component';
 import { VisionStatementComponent } from './vision-statement/vision-statement.component';
 import { WallComponent } from './wall/wall.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WallComponent } from './wall/wall.component';
     ClientsComponent,
     FlipTagComponent,
     VisionStatementComponent,
-    WallComponent
+    WallComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
