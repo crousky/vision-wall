@@ -12,7 +12,7 @@
   </div>
   <div class="project-list">
     <div class="project-item" *ngFor="let p of pagedProjects">
-      <span class="completion project-detail">{{p.completionDate | date:'shortDate'}}</span>
+      <span class="completion project-detail">{{p.completionDate | date:'MMMM y'}}</span>
       <span class="description project-detail">
         <div>{{p.clientName}} - {{p.projectName}}</div>
         <div>{{p.peopleImpacted | number }} <span class="label">people impacted,</span> ${{p.valueCreated | number}} <span class="label">value created</span></div>
