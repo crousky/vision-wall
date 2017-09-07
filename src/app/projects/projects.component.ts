@@ -17,6 +17,8 @@ export class ProjectsComponent implements OnInit {
   projects: Project[];
   pagedProjects: Project[];
   currentPage: number;
+  prevPageDisabled: boolean;
+  nextPageDisabled: boolean;
   readonly numPerPage = 5;
 
   constructor(
@@ -46,6 +48,8 @@ export class ProjectsComponent implements OnInit {
 
   updatePagedList(): void {
     this.pagedProjects = this.projects.slice(this.currentPage * this.numPerPage, (this.currentPage + 1) * this.numPerPage);
+    this.prevPageDisabled = this.currentPage === 0;
+    this.nextPageDisabled = (this.projects.length / this.numPerPage) - 1 < this.currentPage;
   }
 
   nextPageClicked() {
