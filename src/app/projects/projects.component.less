@@ -7,6 +7,7 @@
     background-color: rgba(255, 255, 255, 0.2);
     svg {
         margin: 10px;
+        margin-left: 12px;
         height: 32px;
         fill: @label-color;
     }
@@ -27,38 +28,43 @@
         margin-bottom: 0.2em;
     }
     .section-details {
-        font-size: 1.2em;
+        font-family: "Museo Sans 300";
         letter-spacing: 0.06em;
     }
     .total {
+        font-size: 1.2em;
         font-weight: bold;
+        margin-right: 1.5em;
     }
 
     .project-list {
         margin-top: 1em;
         height: 600px;
+        font-family: "Museo Sans 300";
         .project-item {
             margin-top: 3px;
             padding: 1em;
             background-color: rgba(255, 255, 255, 0.1);
-            font-size: 1.2em;
             .project-detail {
                 float: left;
             }
             .completion {
+                font-size: 0.9em;
                 width: 150px;
-                margin-top: 12px;
+                margin-top: 15px;
             }
             .description {
-                width: 500px;
+                font-weight: bold;
+                width: 550px;
                 .label {
+                    font-weight: normal;
                     font-size: 0.8em;
                 }
             }
             .solution {
-                margin-top: 16px;
+                margin-top: 18px;
                 font-size: 0.8em;
-                font-family: "Museo Sans 700";
+                font-family: "Museo Sans 700 Italic";
             }
             .more {
                 float: right;
@@ -83,6 +89,9 @@
             float: left;
             &:first-child {
                 margin-left: 0;
+                svg {
+                    margin-left: 5px;
+                }
             }
             margin-left: 20px;
         }
