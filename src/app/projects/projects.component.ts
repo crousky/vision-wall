@@ -7,8 +7,7 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.less'],
-  providers: [ProjectService]
+  styleUrls: ['./projects.component.less']
 })
 export class ProjectsComponent implements OnInit {
   totalProjects: number;

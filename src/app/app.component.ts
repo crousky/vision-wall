@@ -5,8 +5,7 @@ import { TokenService } from './services/token.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less'],
-  providers: [TokenService]
+  styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
   constructor(

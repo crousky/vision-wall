@@ -11,7 +11,7 @@
     Projects <span class="total">{{totalProjects | number}}</span> People <span class="total">{{totalPeople | number}}</span> Value <span class="total">${{totalValue | number}}</span>
   </div>
   <div class="project-list">
-    <div class="project-item" *ngFor="let p of pagedProjects">
+    <a class="project-item" *ngFor="let p of pagedProjects" [routerLink]="['/app/projects', p.id]">
       <span class="completion project-detail">{{p.completionDate | date:'MMMM y'}}</span>
       <span class="description project-detail">
         <div>{{p.clientName}} - {{p.projectName}}</div>
@@ -22,7 +22,7 @@
           <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"/></svg>
       </div>
       <div class="clear"></div>
-    </div>
+    </a>
   </div>
   <div class="paging-buttons">
     <a class="nav-arrow" (click)="prevPageClicked()" [ngClass]="{'disabled': prevPageDisabled}">
@@ -35,7 +35,7 @@
   </div>
   <div class="nav-buttons">
     <button class="nav-button" (click)="backClicked()">Back</button>
-    <button class="nav-button primary">Add Project</button>
+    <!-- <button class="nav-button primary">Add Project</button> -->
   </div>
 </div>
 <div class="clear"></div>

@@ -11,6 +11,10 @@ import { FlipTagComponent } from './flip-tag/flip-tag.component';
 import { VisionStatementComponent } from './vision-statement/vision-statement.component';
 import { WallComponent } from './wall/wall.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
+
+import { TokenService } from './services/token.service';
+import { ProjectService } from './services/project.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,8 @@ import { ProjectsComponent } from './projects/projects.component';
     FlipTagComponent,
     VisionStatementComponent,
     WallComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { ProjectsComponent } from './projects/projects.component';
     RouterModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TokenService, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

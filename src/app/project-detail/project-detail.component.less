@@ -1,0 +1,43 @@
+@import "../../variables";
+
+.project-container {
+    padding: 3em 5em;
+    color: @label-color;
+
+    .section-header {
+        width: 1000px;
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 0.2em;
+        letter-spacing: 0.06em;
+        .sub-header {
+            margin-top: 0.3em;
+            font-size: 0.5em;
+            text-transform: uppercase;
+            font-family: "Museo Sans 300";
+        }
+    }
+
+    .nav-buttons {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 175px;
+        .nav-button {
+            &:first-child {
+                margin-left: 0;
+            }
+            margin-left: 20px;
+            height: 50px;
+            width: 175px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            background-color: @label-color;
+            color: @text-orange;
+            &.primary {
+                background-color: @text-light-blue;
+                color: @label-color; 
+            }
+        }
+    }
+}

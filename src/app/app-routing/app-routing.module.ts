@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { WallComponent } from '../wall/wall.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { ProjectDetailComponent } from '../project-detail/project-detail.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'app/projects',
     component: ProjectsComponent
+  },
+  {
+    path: 'app/projects/:id',
+    component: ProjectDetailComponent
   }
 ];
 
