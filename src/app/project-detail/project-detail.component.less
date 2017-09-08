@@ -3,6 +3,7 @@
 .project-container {
     padding: 3em 5em;
     color: @label-color;
+    box-shadow: 0 0 1em rgba(0,0,0,.2);
 
     .section-header {
         width: 1000px;
@@ -16,6 +17,41 @@
             text-transform: uppercase;
             font-family: "Museo Sans 300";
         }
+    }
+
+    .section {
+        width: 450px;
+        margin: 20px;
+        .solution {
+            font-size: 2em;
+            font-family: "Museo Sans 700 Italic";
+            margin-bottom: 2em;
+        }
+        .about {
+            span {
+                font-family: "Museo Sans 300";
+                text-transform: uppercase;
+                margin-bottom: 0.2em;
+            }
+        }
+        .metric {
+            margin-bottom: 1em;
+            .value {
+                font-size: 2em;
+                font-weight: bold;
+            }
+            .title {
+                font-family: "Museo Sans 300";
+                text-transform: uppercase;
+                margin-bottom: 1em;
+            }
+        }
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
     }
 
     .nav-buttons {
