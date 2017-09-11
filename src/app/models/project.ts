@@ -7,6 +7,7 @@ export class Project {
     completionDate: Date;
     solutionName: string;
     description: string;
+    pointOfContact: string;
     peopleImpacted: number;
     externalPeopleImpacted: Metric;
     internalPeopleImpacted: Metric;

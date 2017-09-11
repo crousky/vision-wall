@@ -16,6 +16,10 @@
       <p>{{project.description}}</p>
     </div>
     <div class="completion">Completed on {{project.completionDate | date:'longDate'}}</div>
+    <div class="poc">
+      <div class="name">{{project.pointOfContact}}</div>
+      <span>Point Of Contact</span>
+    </div>
   </div>
 
   <div class="section right">
@@ -43,7 +47,7 @@
     </div>
     <div class="metric">
       <div class="value">
-        {{project.costReduction.value | number}}
+        ${{project.costReduction.value | number}}
       </div>
       <div class="title">
         Cost Reduction
@@ -54,7 +58,7 @@
     </div>
     <div class="metric">
       <div class="value">
-        {{project.incrementalRevenue.value | number}}
+        ${{project.incrementalRevenue.value | number}}
       </div>
       <div class="title">
         Incremental Revenue
