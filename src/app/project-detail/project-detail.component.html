@@ -11,10 +11,6 @@
   
   <div class="section left">
     <div class="solution">{{project.solutionName}}</div>
-    <div class="about">
-      <span>About The Project</span>
-      <p>{{project.description}}</p>
-    </div>
     <div class="completion">Completed on {{project.completionDate | date:'longDate'}}</div>
     <div class="poc">
       <div class="name">{{project.pointOfContact}}</div>
@@ -23,49 +19,22 @@
   </div>
 
   <div class="section right">
-    <div class="metric">
-      <div class="value">
-        {{project.externalPeopleImpacted.value | number}}
-      </div>
-      <div class="title">
-        External People Impacted
-      </div>
-      <div class="description">
-        {{project.externalPeopleImpacted.description}}
-      </div>
+    <div class="about">
+      <span>About The Project</span>
+      <p>{{project.description}}</p>
     </div>
-    <div class="metric">
-      <div class="value">
-        {{project.internalPeopleImpacted.value | number}}
-      </div>
-      <div class="title">
-        Internal People Impacted
-      </div>
-      <div class="description">
-        {{project.internalPeopleImpacted.description}}
-      </div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="metrics">
+    <div class="metric" *ngFor="let m of metrics" [ngClass]="{'selected': m.selected}" (click)="selectMetric(m)">
+      <div class="value">{{m.value | number}}</div>
+      <div class="title">{{m.title}}</div>
     </div>
-    <div class="metric">
-      <div class="value">
-        ${{project.costReduction.value | number}}
-      </div>
-      <div class="title">
-        Cost Reduction
-      </div>
-      <div class="description">
-        {{project.costReduction.description}}
-      </div>
-    </div>
-    <div class="metric">
-      <div class="value">
-        ${{project.incrementalRevenue.value | number}}
-      </div>
-      <div class="title">
-        Incremental Revenue
-      </div>
-      <div class="description">
-        {{project.incrementalRevenue.description}}
-      </div>
+    <div class="clear"></div>
+    <div class="description">
+      {{metricDescription}}
     </div>
   </div>
 
