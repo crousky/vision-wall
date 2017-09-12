@@ -56,6 +56,25 @@
 
     .metrics {
         margin-bottom: 1em;
+        .metric-header {
+            text-transform: uppercase;
+            text-align: center;
+            vertical-align: middle;
+            width: 250px;
+            height: 50px;
+            margin: 10px auto;
+            svg {
+                float: left;
+                width: 45px;
+                height: 45px;
+                margin-right: 20px;
+                fill: @label-color;
+            }
+            .label {
+                float: left;
+                margin-top: 10px;
+            }
+        }
         .metric {
             width: 205px;
             height: 80px;

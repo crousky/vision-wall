@@ -13,7 +13,8 @@ import { Metric } from '../models/metric';
 })
 export class ProjectDetailComponent implements OnInit {
   project: Project;
-  metrics: ProjectMetric[];
+  peopleMetrics: ProjectMetric[];
+  valueMetrics: ProjectMetric[];
   metricDescription: string;
 
   constructor(
@@ -26,24 +27,30 @@ export class ProjectDetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(p => {
       this.projectService.getProjects().subscribe(projects => {
-        this.metrics = [];
+        this.peopleMetrics = [];
+        this.valueMetrics = [];
         const filteredProjects: Project[] = projects.filter(x => x.id === p.get('id'));
         if (filteredProjects.length === 1) {
           this.project = filteredProjects[0];
           if (this.project.externalPeopleImpacted && this.project.externalPeopleImpacted.value > 0) {
-            this.metrics.push(this.createProjectMetric('External', this.project.externalPeopleImpacted));
+            this.peopleMetrics.push(this.createProjectMetric('External', this.project.externalPeopleImpacted));
           }
           if (this.project.internalPeopleImpacted && this.project.internalPeopleImpacted.value > 0) {
-            this.metrics.push(this.createProjectMetric('Internal', this.project.internalPeopleImpacted));
+            this.peopleMetrics.push(this.createProjectMetric('Internal', this.project.internalPeopleImpacted));
           }
           if (this.project.costReduction && this.project.costReduction.value > 0) {
-            this.metrics.push(this.createProjectMetric('Cost Reduction', this.project.costReduction));
+            this.valueMetrics.push(this.createProjectMetric('Cost Reduction', this.project.costReduction));
           }
           if (this.project.incrementalRevenue && this.project.incrementalRevenue.value > 0) {
-            this.metrics.push(this.createProjectMetric('Incremental Revenue', this.project.incrementalRevenue));
+            this.valueMetrics.push(this.createProjectMetric('Incremental Revenue', this.project.incrementalRevenue));
           }
-          this.metrics[0].selected = true;
-          this.metricDescription = this.metrics[0].description;
+          if (this.peopleMetrics.length > 0) {
+            this.peopleMetrics[0].selected = true;
+            this.metricDescription = this.peopleMetrics[0].description;
+          } else if (this.valueMetrics.length > 0) {
+            this.valueMetrics[0].selected = true;
+            this.metricDescription = this.valueMetrics[0].description;
+          }
         } else {
           this.project = null;
         }
@@ -52,7 +59,8 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   selectMetric(metric: ProjectMetric) {
-    this.metrics.forEach(m => m.selected = false);
+    this.peopleMetrics.forEach(m => m.selected = false);
+    this.valueMetrics.forEach(m => m.selected = false);
     metric.selected = true;
     this.metricDescription = metric.description;
   }
