@@ -51,7 +51,7 @@
                 </g>
             </g>
         </svg>
-        <span class="label">{{totalPeople | number}} People Impacted</span>
+        <span class="label">{{totalPeople | number}} People Benefited</span>
       </div>
       <div class="clear"></div>
       <div class="metric" *ngFor="let m of peopleMetrics" [ngClass]="{'selected': m.selected, 'full': peopleMetrics.length === 1}" (click)="selectMetric(m)">
