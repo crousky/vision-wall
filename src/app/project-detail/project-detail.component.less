@@ -5,18 +5,22 @@
     color: @label-color;
     box-shadow: 0 0 1em rgba(0,0,0,.2);
     font-family: "Museo Sans 100";
+    font-size: 0.9em;
+    line-height: 1.3em;
 
     .section-header {
         width: 1000px;
         text-align: center;
         font-size: 2em;
         margin-bottom: 0.2em;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.02em;
         font-family: 'Frank Ruhl Libre', serif;        
         .sub-header {
             margin-top: 0.3em;
             font-size: 0.5em;
             text-transform: uppercase;
+            font-family: "Museo Sans 500";
+            letter-spacing: 0.075em;
         }
     }
 
@@ -37,16 +41,16 @@
         }
         .poc {
             .name {
-                font-family: "Museo Sans 300";
-                font-weight: bold;
+                font-family: "Museo Sans 500";
                 font-size: 1.5em;
             }
             span {
-                font-family: "Museo Sans 700 Italic";
+                font-family: "Museo Sans 100 Italic";
                 font-size: 0.8em;
             }
         }
         .completion {
+            font-family: "Museo Sans 700";
             margin-top: 1em;
         }
     }
@@ -62,25 +66,31 @@
         .metric-header {
             text-transform: uppercase;
             text-align: center;
-            vertical-align: middle;
-            width: 250px;
             height: 50px;
             margin: 10px auto;
             svg {
-                float: left;
+                display: inline-block;
+                vertical-align: top;
                 width: 45px;
                 height: 45px;
                 margin-right: 20px;
                 fill: @label-color;
             }
             .label {
-                float: left;
+                display: inline-block;
+                font-family: "Museo Sans 500";
+                letter-spacing: 0.075em;
                 margin-top: 10px;
             }
         }
+        .value-metrics {
+            margin-left: 5px;
+        }
         .metric {
             width: 205px;
-            height: 80px;
+            &.full {
+                width: 445px;
+            }
             margin-right: 3px;
             padding: 20px;
             float: left;
@@ -105,14 +115,17 @@
                 }
             }
             .value {
+                font-family: "Museo Sans 500";
+                letter-spacing: 0.075em;
                 font-size: 2em;
                 font-weight: bold;
-                letter-spacing: 0.06em;
+                margin-top: 10px;
             }
             .title {
-                font-family: "Museo Sans 300";
+                font-family: 'Frank Ruhl Libre', serif;
+                font-weight: 300;
                 text-transform: uppercase;
-                margin-bottom: 1em;
+                margin-bottom: 10px;
             }
         }
         .description {

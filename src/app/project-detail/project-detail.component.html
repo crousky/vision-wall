@@ -51,15 +51,15 @@
                 </g>
             </g>
         </svg>
-        <span class="label">People Impacted</span>
+        <span class="label">{{totalPeople | number}} People Impacted</span>
       </div>
       <div class="clear"></div>
-      <div class="metric" *ngFor="let m of peopleMetrics" [ngClass]="{'selected': m.selected}" (click)="selectMetric(m)">
+      <div class="metric" *ngFor="let m of peopleMetrics" [ngClass]="{'selected': m.selected, 'full': peopleMetrics.length === 1}" (click)="selectMetric(m)">
         <div class="value">{{m.value | number}}</div>
         <div class="title">{{m.title}}</div>
       </div>
     </div>
-    <div class="right">
+    <div class="value-metrics left">
         <div class="metric-header">
           <svg viewBox="0 0 50 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
@@ -87,10 +87,10 @@
                 </g>
             </g>
         </svg>
-        <span class="label">Value Created</span>
+        <span class="label">${{totalValue | number}} in Value Created</span>
       </div>
       <div class="clear"></div>
-      <div class="metric" *ngFor="let m of valueMetrics" [ngClass]="{'selected': m.selected}" (click)="selectMetric(m)">
+      <div class="metric" *ngFor="let m of valueMetrics" [ngClass]="{'selected': m.selected, 'full': valueMetrics.length === 1}" (click)="selectMetric(m)">
         <div class="value">${{m.value | number}}</div>
         <div class="title">{{m.title}}</div>
       </div>
