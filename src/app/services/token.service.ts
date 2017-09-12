@@ -16,7 +16,7 @@ export class TokenService {
             return '';
         }
         if (!this.tokenValid) {
-            window.location.href = window.location.href + '/api/token';
+            window.location.href = window.location.protocol + '//' + window.location.host + '/api/token';
         }
         return this.token;
     }
