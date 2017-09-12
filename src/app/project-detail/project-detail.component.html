@@ -11,14 +11,14 @@
   
   <div class="section left">
     <div class="solution">{{project.solutionName}}</div>
-    <div class="completion">Completed on {{project.completionDate | date:'longDate'}}</div>
     <div class="poc">
       <div class="name">{{project.pointOfContact}}</div>
       <span>Point Of Contact</span>
     </div>
+    <div class="completion">Completed on {{project.completionDate | date:'longDate'}}</div>
   </div>
 
-  <div class="section right">
+  <div class="section left">
     <div class="about">
       <span>About The Project</span>
       <p>{{project.description}}</p>
