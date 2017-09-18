@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 import { AppComponent } from './app.component';
 import { TallyComponent } from './tally/tally.component';
@@ -31,7 +32,8 @@ import { ProjectService } from './services/project.service';
     BrowserModule,
     HttpModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InlineSVGModule
   ],
   providers: [TokenService, ProjectService],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
     width: 40px;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.2);
-    svg {
+    .nav-icon {
         margin: 10px;
         margin-left: 12px;
         height: 20px;
@@ -13,14 +13,14 @@
     }
     &:hover {
         background-color: #fff;
-        svg {
+        .nav-icon {
             fill: @text-light-blue;
         }
     }
     &.disabled {
         &:hover {
             background-color: rgba(255, 255, 255, 0.2);
-            svg {
+            .nav-icon {
                 fill: @label-color;
             }
         }
@@ -84,7 +84,7 @@
                 background-color: rgba(255, 255, 255, 0.05);
                 .nav-arrow {
                     background-color: #fff;
-                    svg {
+                    .nav-icon {
                         fill: @text-light-blue;
                     }
                 }
@@ -99,7 +99,7 @@
             float: left;
             &:first-child {
                 margin-left: 0;
-                svg {
+                .nav-icon {
                     margin-left: 8px;
                 }
             }
